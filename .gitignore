@@ -1,3 +1,19 @@
+# Comressed Files
+*.7z
+*.dmg
+*.gz
+*.iso
+*.jar
+*.rar
+*.tar
+*.zip
+
+# dog-project files
+dog-project/dogImages/
+dog-project/lfw/
+dog-project/bottleneck_features
+
+
 # Log files (e.g. for TensorBoard)
 logs/
 
