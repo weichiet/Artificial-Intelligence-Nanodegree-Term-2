@@ -9,6 +9,9 @@
 *.zip
 *.npz
 
+# Keras
+*.hdf5
+
 # dog-project files
 dog-project/dogImages/
 dog-project/lfw/
