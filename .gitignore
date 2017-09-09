@@ -7,12 +7,29 @@
 *.rar
 *.tar
 *.zip
+*.npz
 
 # dog-project files
 dog-project/dogImages/
 dog-project/lfw/
-dog-project/bottleneck_features
+dog-project/bottleneck_features/
 
+# Images
+*.jpg
+*.png
+*.bmp
+
+# Excel temporary
+~$*.xls*
+
+# Excel Backup File
+*.xlk
+
+# PowerPoint temporary
+~$*.ppt*
+
+# Visio autosave temporary files
+*.~vsd*
 
 # Log files (e.g. for TensorBoard)
 logs/
