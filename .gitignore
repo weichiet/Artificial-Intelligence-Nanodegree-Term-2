@@ -16,6 +16,7 @@
 dog-project/dogImages/
 dog-project/lfw/
 dog-project/bottleneck_features/
+dog-project/saved_models
 
 # Images
 *.jpg
