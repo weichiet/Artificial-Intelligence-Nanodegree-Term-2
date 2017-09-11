@@ -1,4 +1,5 @@
 import numpy as np
+import re
 
 from keras.models import Sequential
 from keras.layers import Dense
@@ -37,10 +38,23 @@ def build_part1_RNN(window_size):
 
 
 ### TODO: return the text input with only ascii lowercase and the punctuation given below included.
-def cleaned_text(text):
-    punctuation = ['!', ',', '.', ':', ';', '?']
+def cleaned_text(text):  
+    '''
+    To display text's unique characters:
+    uniq_char = list(set(text))
+    print(uniq_char)
+    '''
+    
+    # After examining the text's unique characters, we decided to discard any 
+    # character other than a..b, A..Z, punctuation marks and white space. 
+    
+    # Define regular expression
+    match = re.compile('[^a-zA-Z!,.:;?\s]')
+    
+    # Replace with empty space
+    text = match.sub('', text)
 
-    return text
+    return text    
 
 ### TODO: fill out the function below that transforms the input text and window-size into a set of input/output pairs for use with our RNN model
 def window_transform_text(text, window_size, step_size):
