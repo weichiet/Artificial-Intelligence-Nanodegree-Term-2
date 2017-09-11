@@ -11,7 +11,7 @@ Predicting  student admissions to graduate school at UCLA based on three pieces 
 
 ### Using Keras to Analyze IMDB Movie Data
 File: `IMDB_in_Keras.ipynb`  
-Data:  [Keras](https://keras.io/datasets) website
+Data:  More info available at [Keras](https://keras.io/datasets) website
 
 Analyzing a dataset from IMDB and use it to predict the sentiment analysis of a review.
 
