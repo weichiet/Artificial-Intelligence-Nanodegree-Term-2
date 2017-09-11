@@ -6,7 +6,7 @@ from keras.layers import Dense
 from keras.layers import LSTM
 from keras.layers import Activation
 import keras
-
+from string import ascii_lowercase
 
 # TODO: fill out the function below that transforms the input series 
 # and window-size into a set of input/output pairs for use with our RNN model
@@ -46,16 +46,11 @@ def cleaned_text(text):
     print(uniq_char)
     '''
     
-    # After examining the text's unique characters, we decided to discard any 
-    # character other than a..b, A..Z, punctuation marks and white space. 
-    
-    # Define regular expression
-    match = re.compile('[^a-zA-Z!,.:;?\s]')
-    
-    # Replace with empty space
-    text = match.sub('', text)
-
-    return text    
+    punctuation = ['!', ',', '.', ':', ';', '?']
+    allowed_chars = punctuation + [c for c in ascii_lowercase]
+	
+	# Replace unwanted characters with space
+    return ''.join([c if c in allowed_chars else ' ' for c in text])
 
 ### TODO: fill out the function below that transforms the input text and window-size into a set of input/output pairs for use with our RNN model
 def window_transform_text(text, window_size, step_size):
