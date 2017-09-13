@@ -20,6 +20,9 @@ dog-project/saved_models
 
 AIND-NLP-Bookworm/service-credentials.json
 
+AIND-CV-Mimic/my-ssl-cert.pem
+AIND-CV-Mimic/.DS_Store
+
 # Images
 *.jpg
 *.png
