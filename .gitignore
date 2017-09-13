@@ -18,6 +18,8 @@ dog-project/lfw/
 dog-project/bottleneck_features/
 dog-project/saved_models
 
+AIND-NLP-Bookworm/service-credentials.json
+
 # Images
 *.jpg
 *.png
