@@ -22,6 +22,9 @@ detector.detectAllAppearance();
 // Unicode values for all emojis Affectiva can detect
 var emojis = [ 128528, 9786, 128515, 128524, 128527, 128521, 128535, 128539, 128540, 128542, 128545, 128563, 128561 ];
 
+// Reduced set of emojis
+var reducedEmojis = [ 9786, 128515, 128527, 128521, 128535, 128539, 128545];
+
 // Update target emoji being displayed by supplying a unicode value
 function setTargetEmoji(code) {
   $("#target").html("&#" + code + ";");
@@ -75,6 +78,7 @@ function onReset() {
 
   // TODO(optional): You can restart the game as well
   // <your code here>
+  initialzeGame();
 };
 
 // Add a callback to notify when camera access is allowed
@@ -103,6 +107,10 @@ detector.addEventListener("onInitializeSuccess", function() {
 
   // TODO(optional): Call a function to initialize the game, if needed
   // <your code here>
+  log('#logs', "Game starts!");
+  targetEmoji = getRandomEmoji();
+  setTargetEmoji(targetEmoji);
+  elapsedTime = performance.now();
 });
 
 // Add a callback to receive the results from processing an image
@@ -134,6 +142,7 @@ detector.addEventListener("onImageResultsSuccess", function(faces, image, timest
 
     // TODO: Call your function to run the game (define it first!)
     // <your code here>
+    mimicMe(faces[0])
   }
 });
 
@@ -177,11 +186,18 @@ function drawEmoji(canvas, img, face) {
 
   // TODO: Set the font and style you want for the emoji
   // <your code here>
+  ctx.font = '60px consolas';
 
   // TODO: Draw it using ctx.strokeText() or fillText()
   // See: https://developer.mozilla.org/en-US/docs/Web/API/CanvasRenderingContext2D/fillText
   // TIP: Pick a particular feature point as an anchor so that the emoji sticks to your face
   // <your code here>
+
+  // ctx.fillText(text, x, y [, maxWidth]);
+
+  // Draw emoji
+  ctx.fillText(face.emojis.dominantEmoji, face.featurePoints[32].x+50,
+                face.featurePoints[0].y-60);
 }
 
 // TODO: Define any variables and functions to implement the Mimic Me! game mechanics
@@ -198,3 +214,57 @@ function drawEmoji(canvas, img, face) {
 // - Define a game reset function (same as init?), and call it from the onReset() function above
 
 // <your code here>
+
+var correctScore = 0;
+var totalScore = 0;
+var targetEmoji = reducedEmojis[Math.floor(Math.random() * (reducedEmojis.length-1))];
+var elapsedTime = 0;
+
+function initialzeGame() {
+  // Initialize game variables
+  correctScore = 0;
+  totalScore = 0;
+  setScore(correctScore, totalScore);
+  targetEmoji = reducedEmojis[Math.floor(Math.random() * (reducedEmojis.length-1))];
+  elapsedTime = 0;
+
+}
+
+function getRandomEmoji() {
+  // Get a random emoji
+  var newEmoji = reducedEmojis[Math.floor(Math.random() * (reducedEmojis.length-1))];
+
+  if (newEmoji == targetEmoji) {
+    newEmojiUnicode = getRandomEmoji();
+  }
+  else{
+    // Update total score
+    totalScore++;
+    setScore(correctScore, totalScore);
+}
+
+  return newEmoji;
+}
+
+function mimicMe(face) {
+  // set <div id="target"></div> to target emojis
+  var faceEmoji = toUnicode(face.emojis.dominantEmoji);
+  var currentTime = performance.now()
+
+  if (faceEmoji == targetEmoji) {
+    // If face matches target emoji, give a score
+    log('#logs', "Emoji matched!");
+    correctScore += 1;
+    setScore(correctScore, totalScore)
+
+    targetEmoji = getRandomEmoji();
+    //Update target emoji
+    setTargetEmoji(targetEmoji);
+  }
+  else if (currentTime - elapsedTime > 15000) {
+    log('#logs', "Ops, times up! Try a new one.");
+    targetEmoji= getRandomEmoji();
+    setTargetEmoji(targetEmoji);
+    elapsedTime = currentTime;
+  }
+}
