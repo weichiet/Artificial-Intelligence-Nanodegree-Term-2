@@ -148,7 +148,10 @@ function drawFeaturePoints(canvas, img, face) {
   // TODO: Set the stroke and/or fill style you want for each feature point marker
   // See: https://developer.mozilla.org/en-US/docs/Web/API/CanvasRenderingContext2D#Fill_and_stroke_styles
   // <your code here>
-  
+  // **** RJS - start
+  ctx.strokeStyle = 'white';
+  ctx.fillStyle = 'white';
+
   // Loop over each feature point in the face
   for (var id in face.featurePoints) {
     var featurePoint = face.featurePoints[id];
@@ -156,6 +159,14 @@ function drawFeaturePoints(canvas, img, face) {
     // TODO: Draw feature point, e.g. as a circle using ctx.arc()
     // See: https://developer.mozilla.org/en-US/docs/Web/API/CanvasRenderingContext2D/arc
     // <your code here>
+
+    // ctx.arc(x, y, radius, startAngle, endAngle, anticlockwise);
+
+    // Draw the feature points
+    ctx.beginPath();
+    ctx.arc(featurePoint.x, featurePoint.y, 3, 0, 2 * Math.PI);
+    ctx.stroke();
+    ctx.fill();
   }
 }
 
@@ -166,7 +177,7 @@ function drawEmoji(canvas, img, face) {
 
   // TODO: Set the font and style you want for the emoji
   // <your code here>
-  
+
   // TODO: Draw it using ctx.strokeText() or fillText()
   // See: https://developer.mozilla.org/en-US/docs/Web/API/CanvasRenderingContext2D/fillText
   // TIP: Pick a particular feature point as an anchor so that the emoji sticks to your face
