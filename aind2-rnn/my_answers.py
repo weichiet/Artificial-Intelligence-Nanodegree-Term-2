@@ -45,7 +45,13 @@ def cleaned_text(text):
     uniq_char = list(set(text))
     print(uniq_char)
     '''
+    # Define regular expression
+    #match = re.compile('[^a-zA-Z!,.:;?\s]')
     
+    # Replace with empty space
+    #text = match.sub('', text)
+
+ 
     punctuation = ['!', ',', '.', ':', ';', '?']
     allowed_chars = punctuation + [c for c in ascii_lowercase]
 	
