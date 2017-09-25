@@ -23,6 +23,11 @@ AIND-NLP-Bookworm/service-credentials.json
 AIND-CV-Mimic/my-ssl-cert.pem
 AIND-CV-Mimic/.DS_Store
 
+AIND-CV-FacialKeypoints/data/*.csv
+AIND-CV-FacialKeypoints/saved_models
+
+AIND-NLP-master/data/*
+
 # Images
 *.jpg
 *.png
