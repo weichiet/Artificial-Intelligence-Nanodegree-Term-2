@@ -29,9 +29,9 @@ AIND-CV-FacialKeypoints/saved_models
 AIND-NLP-master/data/*
 
 # Images
-*.jpg
-*.png
-*.bmp
+#*.jpg
+#*.png
+#*.bmp
 
 # Excel temporary
 ~$*.xls*
