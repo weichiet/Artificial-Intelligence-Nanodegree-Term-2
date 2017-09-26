@@ -13,14 +13,14 @@ Global innovations in the field of artificial intelligence (AI) are going to red
 1. [Embedding and Word2Vec](./embeddings/Skip-Gram_word2vec.ipynb)  
 Implement the Word2Vec model to find semantic representations of words for use in natural language processing.
 
-2. [Sequence to sequence](./seq2seq/seq2seq.ipynb)  
- Implement a sequence-to-sequence recurrent network.
-
-3. [Character-wise Recurrent Neural Networks (RNN)](./intro-to-rnns)  
+2. [Character-wise Recurrent Neural Networks (RNN)](./intro-to-rnns)  
 Build a character-wise RNN trained on Anna Karenina to generate new text based on the text from the book.  
 
-4. [Sentiment Prediction RNN](./sentiment-rnn)  
+3. [Sentiment Prediction RNN](./sentiment-rnn)  
 Implement a recurrent neural network that can predict if a text sample is positive or negative.  
+
+4. [Character Sequence to Sequence](./seq2seq/seq2seq.ipynb)  
+ Implement a model that takes in a sequence of letters, and outputs a sorted version of that sequence.
 
 5. [Bookworm](./AIND-NLP-Bookworm)  
 Build a simple question-answering system using IBM Watson's NLP services.  
