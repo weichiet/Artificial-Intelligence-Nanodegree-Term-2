@@ -37,10 +37,10 @@ Build a deep neural network that can identify an estimate of the canine’s bree
 3. [Mimic Me!](./AIND-CV-Mimic)  
 Use [Affectiva's](http://www.affectiva.com/) Emotion-as-a-Service API to track faces in a video and identify facial expressions.  
 
-4. [Capstone Project: Facial Keypoint Detection](./AIND-CV-FacialKeypoints)  
+4. [Capstone Project: Facial Keypoints Detection](./AIND-CV-FacialKeypoints)  
 Build a deep neural network that can take in any image containing faces and identify the location of each face and their facial keypoints.  
 
-### Generative Adversatial Network (GAN)
+### Generative Adversarial Network (GAN)
 1. [GAN on MNIST](./gan_mnist/Intro_to_GANs.ipynb)  
 Train a simple generative adversarial network on the MNIST dataset.  
 
