@@ -4,7 +4,7 @@
 
 Global innovations in the field of artificial intelligence (AI) are going to redefine virtually every aspect of our lives. Students who master AI skills today will play a critical role in helping determine how this incredible technology impacts our future. This [program](https://www.udacity.com/course/artificial-intelligence-nanodegree--nd889) will introduce you to the broad field of artificial intelligence, and prepare you for a wide variety of opportunities in the AI field.
 
-## Course Syllabus
+## Course Outline:
 * [Term 1](https://medium.com/udacity/ai-nanodegree-program-syllabus-term-1-in-depth-80c41297acaf): Foundations of AI  
 * [Term 2](https://medium.com/udacity/ai-nanodegree-program-syllabus-term-2-deep-learning-in-depth-d935197b66ec): Deep Learning and Applications  
 
@@ -44,6 +44,12 @@ Used [Affectiva's](http://www.affectiva.com/) Emotion-as-a-Service API to track 
 
 4. [Capstone Project: Facial Keypoints Detection](./AIND-CV-FacialKeypoints)  
 Built a deep neural network that can take in any image containing faces and identify the location of each face and their facial keypoints.  
+
+### Voice User Interfaces  
+1. [Capstone Project: DNN Speech Recognizer](./AIND-VUI)  
+Built a deep neural network that functions as part of an end-to-end automatic speech recognition (ASR)
+pipeline. The model converts raw audio into feature representations, which then turns them into
+transcribed text.
 
 ### Generative Adversarial Network (GAN)
 1. [GAN on MNIST](./gan_mnist/Intro_to_GANs.ipynb)  
