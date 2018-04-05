@@ -28,6 +28,9 @@ AIND-CV-FacialKeypoints/saved_models
 
 AIND-NLP-master/data/*
 
+AIND-VUI/results
+
+
 # Images
 #*.jpg
 #*.png
